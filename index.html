@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+	</head>
+	<body>
+		<div>
+			<img src="./captchaImage.png" id="image"></img>
+		</div>
+		<script>
+		window.onload = function() {
+			var img = document.getElementById('image');
+
+			Tesseract.recognize(img.src)
+			.then(function(result){
+			    console.log(result.text);
+			},function(err){
+				console.log(err);
+			});
+		}
+		</script>
+	</body>
+</html>
