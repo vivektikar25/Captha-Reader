@@ -10,7 +10,6 @@
 		<script>
 		window.onload = function() {
 			var img = document.getElementById('image');
-
 			Tesseract.recognize(img.src)
 			.then(function(result){
 			    console.log(result.text);
